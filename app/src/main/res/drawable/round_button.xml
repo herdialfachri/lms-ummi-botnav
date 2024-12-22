@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!-- round_button.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/lavender" />
+    <corners android:radius="300dp" /> <!-- Atur radius sesuai kebutuhan -->
+</shape>
+
+<!--    <?xml version="1.0" encoding="utf-8"?>&lt;!&ndash; round_button.xml &ndash;&gt;-->
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:shape="rectangle">-->
+
+<!--<solid android:color="@android:color/transparent" /> &lt;!&ndash; Warna latar belakang transparan &ndash;&gt;-->
+
+<!--<stroke-->
+<!--    android:width="10dp"-->
+<!--    android:color="@android:color/black" />-->
+
+<!--<corners android:radius="300dp" /> &lt;!&ndash; Atur radius sesuai kebutuhan &ndash;&gt;-->
+<!--</shape>-->
