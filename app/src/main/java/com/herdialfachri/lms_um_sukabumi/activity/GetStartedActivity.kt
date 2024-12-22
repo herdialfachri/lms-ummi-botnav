@@ -8,6 +8,7 @@ import com.herdialfachri.lms_um_sukabumi.R
 
 class GetStartedActivity : AppCompatActivity() {
     private lateinit var startButton: Button
+    private lateinit var backButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +18,14 @@ class GetStartedActivity : AppCompatActivity() {
 
         startButton.setOnClickListener {
             val intent = Intent(this@GetStartedActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        backButton = findViewById(R.id.backButton)
+
+        backButton.setOnClickListener {
+            val intent = Intent(this@GetStartedActivity, NavigationActivity::class.java)
             startActivity(intent)
             finish()
         }

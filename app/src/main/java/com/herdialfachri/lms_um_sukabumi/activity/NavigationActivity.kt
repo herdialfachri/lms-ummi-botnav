@@ -3,7 +3,6 @@ package com.herdialfachri.lms_um_sukabumi.activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Html
-import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -16,9 +15,7 @@ class NavigationActivity : AppCompatActivity() {
 
     private lateinit var slideViewPager: ViewPager
     private lateinit var dotIndicator: LinearLayout
-    private lateinit var backButton: Button
     private lateinit var nextButton: Button
-    private lateinit var skipButton: Button
     private lateinit var dots: Array<TextView?>
     private lateinit var viewPagerAdapter: ViewPagerAdapter
 
@@ -27,9 +24,7 @@ class NavigationActivity : AppCompatActivity() {
 
         override fun onPageSelected(position: Int) {
             setDotIndicator(position)
-
-            backButton.visibility = if (position > 0) View.VISIBLE else View.INVISIBLE
-            nextButton.text = if (position == 2) "Finish" else "Next"
+            nextButton.text = if (position == 2) "Selesai" else "Selanjutnya"
         }
 
         override fun onPageScrollStateChanged(state: Int) {}
@@ -39,15 +34,7 @@ class NavigationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
 
-        backButton = findViewById(R.id.backButton)
         nextButton = findViewById(R.id.nextButton)
-        skipButton = findViewById(R.id.skipButton)
-
-        backButton.setOnClickListener {
-            if (getItem(0) > 0) {
-                slideViewPager.setCurrentItem(getItem(-1), true)
-            }
-        }
 
         nextButton.setOnClickListener {
             if (getItem(0) < 2)
@@ -57,12 +44,6 @@ class NavigationActivity : AppCompatActivity() {
                 startActivity(i)
                 finish()
             }
-        }
-
-        skipButton.setOnClickListener {
-            val i = Intent(this@NavigationActivity, MainActivity::class.java)
-            startActivity(i)
-            finish()
         }
 
         slideViewPager = findViewById(R.id.slideViewPager)
