@@ -13,11 +13,14 @@
         android:theme="@style/Theme.OnboardingPractice"
         tools:targetApi="31">
         <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.GetStartedActivity"
             android:exported="false" />
         <activity
             android:name=".activity.NavigationActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

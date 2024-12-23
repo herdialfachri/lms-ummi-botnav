@@ -17,7 +17,7 @@ class GetStartedActivity : AppCompatActivity() {
         startButton = findViewById(R.id.startButton)
 
         startButton.setOnClickListener {
-            val intent = Intent(this@GetStartedActivity, MainActivity::class.java)
+            val intent = Intent(this@GetStartedActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
