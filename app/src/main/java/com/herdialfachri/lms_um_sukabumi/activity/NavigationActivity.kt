@@ -3,6 +3,7 @@ package com.herdialfachri.lms_um_sukabumi.activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Html
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -20,11 +21,20 @@ class NavigationActivity : AppCompatActivity() {
     private lateinit var viewPagerAdapter: ViewPagerAdapter
 
     private val viewPagerListener = object : ViewPager.OnPageChangeListener {
-        override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+        override fun onPageScrolled(
+            position: Int,
+            positionOffset: Float,
+            positionOffsetPixels: Int
+        ) {
+        }
 
         override fun onPageSelected(position: Int) {
             setDotIndicator(position)
             nextButton.text = if (position == 2) "Selesai" else "Selanjutnya"
+
+            val animIn = AnimationUtils.loadAnimation(this@NavigationActivity, R.anim.zoom_in)
+            val animOut = AnimationUtils.loadAnimation(this@NavigationActivity, R.anim.zoom_out)
+            slideViewPager.startAnimation(if (position == slideViewPager.currentItem) animIn else animOut)
         }
 
         override fun onPageScrollStateChanged(state: Int) {}
@@ -68,7 +78,12 @@ class NavigationActivity : AppCompatActivity() {
             }
             dotIndicator.addView(dots[i])
         }
-        dots[position]?.setTextColor(resources.getColor(R.color.biru_ummi, applicationContext.theme))
+        dots[position]?.setTextColor(
+            resources.getColor(
+                R.color.biru_ummi,
+                applicationContext.theme
+            )
+        )
     }
 
     private fun getItem(i: Int): Int {
