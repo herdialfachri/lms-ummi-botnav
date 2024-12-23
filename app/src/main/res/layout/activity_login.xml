@@ -11,7 +11,7 @@
         android:id="@+id/imageLogin"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:scaleType="centerCrop"
         android:src="@drawable/onboarding3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/inter"
         android:text="Selamat Datang"
         android:textAlignment="center"
@@ -100,12 +100,12 @@
         android:id="@+id/registerTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:text="Mahasiswa baru?"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/forgotPw"
         app:layout_constraintEnd_toEndOf="@+id/password_input"
-        app:layout_constraintTop_toTopOf="@+id/forgotPw" />
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
     <Button
         android:id="@+id/loginButton"
@@ -140,7 +140,7 @@
         android:id="@+id/googleImage"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/google"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
